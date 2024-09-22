@@ -1,0 +1,62 @@
+info:
+  contact: {}
+paths:
+  /api/v1/accounts:
+    get:
+      consumes:
+      - application/json
+      description: get account state
+      operationId: get-account-state
+      parameters:
+      - description: address
+        in: query
+        name: addr
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Account State
+  /api/v1/bets:
+    get:
+      consumes:
+      - application/json
+      description: get active bets
+      operationId: get-active-bets
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Active Bets
+  /api/v1/transactions:
+    get:
+      consumes:
+      - application/json
+      description: get status
+      operationId: get-transactions
+      parameters:
+      - description: Address
+        in: query
+        name: addr
+        required: true
+        type: string
+      - description: Hash
+        in: query
+        name: hash
+        required: true
+        type: string
+      - description: Lt
+        in: query
+        name: lt
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get Transactions from the TON Blockchain
+swagger: "2.0"
